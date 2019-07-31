@@ -15,7 +15,7 @@ public class UserConfiguration {
     public ViewResolver viewResolver()
     {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver(); //  is an implementation of ViewResolver in Spring MVC framework which resolves logical view
-        viewResolver.setPrefix("/WEB-INF/");
+        viewResolver.setPrefix("/WEB-INF/views");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
 
