@@ -7,13 +7,14 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration
-@EnableWebMvc
-@ComponentScan(basePackages = "com.stackroute")
+@Configuration // it is indicates that class has @Bean definition methods from this spring container can generate beans for class
+@EnableWebMvc //is used to enable Spring MVC, It enables support for @Controller-annotated classes that use @RequestMapping to map incoming requests to a certain method.
+@ComponentScan(basePackages = "com.stackroute") //to specify the packages that we want to be scanned.
 public class UserConfiguration {
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+    @Bean //Indicates that a method produces a bean to be managed by the Spring container.
+    public ViewResolver viewResolver()
+    {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver(); //  is an implementation of ViewResolver in Spring MVC framework which resolves logical view
         viewResolver.setPrefix("/WEB-INF/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
